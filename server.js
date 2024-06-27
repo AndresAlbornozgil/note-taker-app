@@ -1,22 +1,20 @@
 // Modules
 const express = require('express');
-const path = require('path');
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const app = express();
-
+const htmlRoutes = require('./routes/htmlRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 
 // Routes & configurations
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static('public'));
 
-app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/notes.html'))
-});
+app.use(express.json());
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/index.html'))
-});
+app.use(express.urlencoded({ extended: true }));
 
+app.use('/', htmlRoutes);
 
+app.use('/api', apiRoutes);
 
 
 // Start server
