@@ -1,5 +1,5 @@
 const fs = require('fs');
-const uuidPackage = require('uuid/v1');
+const uuidPackage = require('uuid');
 const util = require('util');
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
