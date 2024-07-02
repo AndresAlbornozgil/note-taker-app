@@ -7,10 +7,10 @@ const writeFile = util.promisify(fs.writeFile);
 class Store {
     read() {
         return readFile('db/db.json', 'utf8'); //not sure
-    }
+    };
     write(note) {
         return writeFile('db/db.json', JSON.stringify(note));
-    }
+    };
 
     getNotes() {
         this.read()
@@ -22,8 +22,8 @@ class Store {
                     getNotes = JSON.parse(notes);
                 }
                 return getNotes;
-            })
-    }
+            });
+    };
 
     addNotes(notes) {
         const {text, title} = notes;
@@ -35,10 +35,15 @@ class Store {
             text, title, id: uuidPackage()
         };
 
-        this.getNotes().then((notes) => {
-            
+        return this.getNotes()
+            .then((notes) => {
+                return [...notes, addedNote]
         })
-    }
+            .then((updatedNote) => {
+                this.write(updatedNote);
+        })
+            .then(() => addedNotes)
+    };
 
     removeNotes() {
 
