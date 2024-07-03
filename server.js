@@ -12,10 +12,9 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/', htmlRoutes);
-
 app.use('/api', apiRoutes);
 
+app.use('/', htmlRoutes);
 
 // Start server
 app.listen(PORT, () => {
