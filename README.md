@@ -16,8 +16,8 @@
 
   #### The idea of completing this project is ...
 
-  ![image of Note Taker App]()
-  ![image of Note Taker App]()
+  ![image of Note Taker App](assets/note-taker-app-1.JPG)
+  ![image of Note Taker App](assets/note-taker-app-2.JPG)
   
   ## License
   #### This project is unlicensed.
