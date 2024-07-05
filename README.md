@@ -12,7 +12,13 @@
   ## Installation
   #### N/A
   ## Usage
-  #### 
+  #### Deployed on [Render]()
+
+  #### The idea of completing this project is ...
+
+  ![image of Note Taker App]()
+  ![image of Note Taker App]()
+  
   ## License
   #### This project is unlicensed.
   ## Contributing
